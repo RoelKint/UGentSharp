@@ -43,7 +43,7 @@ namespace Library
 
         }
         // item weergeven als string met een aantal karakters als indentatie
-        public string Toon(int insprong) {
+        public virtual string Toon(int insprong) {
             return "";
         }
     }

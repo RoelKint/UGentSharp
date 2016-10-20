@@ -43,9 +43,14 @@ namespace Library.Klassen
 
         }
         // item weergeven als string met een aantal karakters als indentatie
-        public string Toon(int insprong)
+        public override string Toon(int insprong)
         {
-            return "";
+            string insprongLijntjes = "";
+            for (int i = 0; i < insprong; i++)
+            {
+                insprongLijntjes += "-";
+            }
+            return insprongLijntjes+Id + ": \""+ Naam+"\", "+ Auteur+ "\n";
         }
     }
 }

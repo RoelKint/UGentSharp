@@ -9,7 +9,7 @@ namespace Library
     public interface IBibItem
     {
         // unieke identificatie
-        string Id { get; set; } 
+        string Id { get; set; }
         // ouder waartoe het item (bv. artikel, afdeling, ...) behoort of null
         IBibItem Ouder { get; set; }
         // item toevoegen aan dit item 

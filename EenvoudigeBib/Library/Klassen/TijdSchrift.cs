@@ -13,6 +13,8 @@ namespace Library.Klassen
 
         public DateTime Datum { get; set; }
 
+        private List<IBibItem> list = new List<IBibItem>();
+
         public string Uitgeverij { get; set; }
 
         public string Naam { get; set; }
@@ -21,7 +23,7 @@ namespace Library.Klassen
         // item toevoegen aan dit item 
         public void VoegToe(IBibItem bibItem)
         {
-
+            list.Add(bibItem);
         }
         // item verwijderen uit dit item 
         public void Verwijder(IBibItem bibItem)
@@ -45,9 +47,20 @@ namespace Library.Klassen
 
         }
         // item weergeven als string met een aantal karakters als indentatie
-        public string Toon(int insprong)
+        public override string Toon(int insprong)
         {
-            return "";
+            string insprongLijntjes = "";
+            for (int i = 0; i < insprong; i++)
+            {
+                insprongLijntjes += "-";
+            }
+            string resultaat = insprongLijntjes+Id + ": \"" + Naam + "\", " + Datum + ", " + Uitgeverij + ": \n";
+            insprong += 2;
+            foreach (Artikel artikel in list)
+            {
+                resultaat += artikel.Toon(insprong);
+            }
+            return resultaat;
         }
     }
 }

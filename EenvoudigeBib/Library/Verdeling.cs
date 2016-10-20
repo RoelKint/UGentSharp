@@ -11,13 +11,15 @@ namespace Library
         // unieke identificatie
         public string Id { get; set; }
 
+        private List<IBibItem> list = new List<IBibItem>();
+
         public string Naam { get; set; }
         // ouder waartoe het item (bv. artikel, afdeling, ...) behoort of null
         public IBibItem Ouder { get; set; }
         // item toevoegen aan dit item 
         public void VoegToe(IBibItem bibItem)
         {
-
+            
         }
         // item verwijderen uit dit item 
         public void Verwijder(IBibItem bibItem)
@@ -41,7 +43,7 @@ namespace Library
 
         }
         // item weergeven als string met een aantal karakters als indentatie
-        public string Toon(int insprong)
+        public virtual string Toon(int insprong)
         {
             return "";
         }
